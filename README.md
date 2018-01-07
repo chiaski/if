@@ -1,8 +1,5 @@
-# Twine Dump
-Everyday, I am suffering.
+chia amisola's interactive fiction
 
-### What is this for?
-Nothing. Or I suppose, you can look at it as a glimpse into the depths of hell.
-
-### What is it really for?
-It's a dump of my interactive fictives. Vignette games. Etcetera.
+* the day after: post-mortem story
+* the night before: reflection on depression and existentialism
+* simsim: archaic
