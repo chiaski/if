@@ -1,7 +1,7 @@
 chia amisola's interactive fiction
 
 * the day after: post-mortem story
-* the night before: reflection on depression and existentialism
+* the night before: initially made for a challenge, on suicide
 * simsim: archaic
 
 
