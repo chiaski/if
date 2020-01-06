@@ -17,30 +17,95 @@
 
 body{
   background:#202024;
+  background-size:cover;
 }
 
 
 tw-passage{
-  font-family: mrs-eaves, serif;
+  font-family: Amiri, serif;
   color:#f7f7f5;
   box-sizing:border-box;
   padding:2em;
+  cursor: default;
+ 
 }
 
 tw-link{color:#f7f7f5; text-shadow:0 0 15px #f7f7f5;}
-tw-link:hover{color:#f7f7f5; text-shadow:0 0 25px #f7f7f5;}
+tw-link:hover{color:#f7f7f5; text-shadow:0 0 25px #f7f7f5; cursor: e-resize;}
+
+
+.cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -50%;
+    left: -50%;
+    margin: -15px 0 0 -15px;
+    border-radius: 100%;
+    background-color: pink;
+    backface-visibility: hidden;
+    transition: transform 0.2s ease-out;
+    mix-blend-mode: difference;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.cursor.is-moving {
+    transform: scale(.8);
+}
+
+.cursor.is-hovering {
+    transform: scale(2.2);
+}
 
 
 
 /* Tag based */
 
 tw-story[tags~="bg"]{background-image:url(https://i.imgur.com/g6Pn0Iw.png);background-color:red !important;}
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
 
 
-</script><tw-passagedata pid="1" name="Introduction: 0" tags="bg-dspeckle bg" position="412,189" size="100,100">I am nineteen-years old when I am writing this story.
 
-(transition: &quot;dissolve&quot;)[[[It&#39;s one of the smallest stories I&#39;ve ever known.]]]</tw-passagedata><tw-passagedata pid="2" name="It&#39;s one of the smallest stories I&#39;ve ever known." tags="" position="412,339" size="100,100">In middle school they told us a story
+
+
+
+var $cursor = $('.cursor');
+
+// If cursor is moving
+
+function moveCursor(e) {
+    $cursor.addClass('is-moving');
+    $cursor.css({
+        "top": e.pageY,
+        "left": e.pageX
+    });
+
+    clearTimeout(timer2);
+
+    var timer2 = setTimeout(function () {
+        $cursor.removeClass('is-moving');
+    }, 300);
+}
+
+function enlargeCursor(e) {
+    $cursor.removeClass('is-moving');
+    $cursor.addClass('is-hovering');
+}
+
+function unenlargeCursor(e) {
+    $cursor.removeClass('is-hovering');
+}
+
+$(window).on('mousemove', moveCursor);
+$("a").on('mouseenter', enlargeCursor);
+$("a").on('mouseleave', unenlargeCursor);
+</script><tw-passagedata pid="1" name="Introduction: 0" tags="bg-dspeckle bg" position="132,67.33333333333334" size="100,100">I am nineteen-years old when I am writing this story.
+
+(transition: &quot;dissolve&quot;)[[It&#39;s one of the smallest stories I&#39;ve ever known.]]
+
+&lt;div class=&quot;cursor&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="It&#39;s one of the smallest stories I&#39;ve ever known." tags="" position="145.33333333333326,308.6666666666667" size="100,100">In middle school they told us a story
 about a boy who took the consecrated
 host (the body of Christ in unleavened
 bread) and spat it out to throw it
@@ -50,8 +115,8 @@ plastic and prayed to in the backroom.
 
 It goes that the priest dug through
 C2 bottles and aluminum to get the pieces,
-hold them together, forgive, and
-ingest in the body once more.</tw-passagedata><tw-passagedata pid="3" name="[It&#39;s one of the smallest stories I&#39;ve ever known." tags="" position="532,339" size="100,100">America purveys me some promise
+[[hold them together, forgive,-&gt;America]] and
+ingest in the body once more.</tw-passagedata><tw-passagedata pid="3" name="America" tags="" position="437,152.33333333333331" size="100,100">America purveys me some promise
 [[for the sun]]. It tells me a story
 of the immigrant on miles,
 the chafe of a woman&#39;s knuckles
@@ -61,7 +126,7 @@ all my yayas choose the sea
 and the television. America serves
 me my country in bright yellow
 cafes, in evaporated milk
-cans, or [[with prayer]].</tw-passagedata><tw-passagedata pid="4" name="with prayer" tags="" position="532,489" size="100,100">Years after I had stopped believing,
+cans, or [[with prayer]].</tw-passagedata><tw-passagedata pid="4" name="with prayer" tags="" position="352,279" size="100,100">Years after I had stopped believing,
 I continued to perform the Sign of the Cross
 after the consecrated host. Then:
 in high school, where I had been indoctrinated
@@ -82,7 +147,7 @@ It&#39;s only years later did the repetition
 end; and these days I recognize with
 the last of my prayer and my knees on
 the ground did I stop thinking
-of gods and how they must.</tw-passagedata><tw-passagedata pid="5" name="as agnostic" tags="" position="690,440" size="100,100">We talked on the redundancy of
+of gods and how they must.</tw-passagedata><tw-passagedata pid="5" name="as agnostic" tags="" position="520,358.3333333333333" size="100,100">We talked on the redundancy of
 prayer and the listnessness come mind.
 
 My friends go to worship: watch
@@ -97,7 +162,7 @@ I had never witnessed the body seized
 in front of me. I could only hope that
 god, the shepherd; counted the fleece,
 waited carefully for the young men, kissed
-their chests but only in public.</tw-passagedata><tw-passagedata pid="6" name="bridge of his tongue" tags="" position="443,635" size="100,100">Last Easter in America at fourteen
+their chests but only in public.</tw-passagedata><tw-passagedata pid="6" name="bridge of his tongue" tags="" position="329.6666666666667,438.3333333333333" size="100,100">Last Easter in America at fourteen
 (back when we had all believed) I felt
 my heels unearth themselves. In those
 steps I wanted to fucking explode into
@@ -112,19 +177,19 @@ women that had sinned in hats and without.
 My cousin came out [[as agnostic]]
 and I went upstairs with her. We took our
 shoes off and lined her trash can,
-dreaming of tigermilk and the skin of Mary.</tw-passagedata><tw-passagedata pid="7" name="a fray of white and white" tags="" position="655,620" size="100,100">My first hate crime they talked to me
+dreaming of tigermilk and the skin of Mary.</tw-passagedata><tw-passagedata pid="7" name="a fray of white and white" tags="" position="588.3333333333334,573.3333333333334" size="100,100">My first hate crime they talked to me
 about boys throwing acid at girls
 and its now virulence to society.
 
 &quot;The most disgusting men use their
-position to overpower women
+position to [[overpower women]]
 and get what they want.&quot;
 
 Like we can&#39;t see the mirrors left
 under desks, like there are girls
 who told me my arm was unshaved
 before telling each other you are
-not looking where you should be.</tw-passagedata><tw-passagedata pid="8" name="for the sun" tags="" position="658,309" size="100,100">Here the sun sets at eight
+not looking where you should be.</tw-passagedata><tw-passagedata pid="8" name="for the sun" tags="" position="596.3333333333334,214" size="100,100">Here the sun sets at eight
 and does not wait for you to rise.
 
 The prophesy goes that our men
@@ -133,7 +198,7 @@ like stars or elegy. Joseph, in his
 letter, did not mention anything but
 the blood of the water. Or maybe
 he was [[forgotten again]] when the young
-were writing about the sea.</tw-passagedata><tw-passagedata pid="9" name="forgotten again" tags="" position="858.3333333333334,203.33333333333334" size="100,100">Over the last iteration I drew
+were writing about the sea.</tw-passagedata><tw-passagedata pid="9" name="forgotten again" tags="" position="744.6666666666666,206.33333333333334" size="100,100">Over the last iteration I drew
 narratives of girls begging to be
 extinguished. Prophets stood too
 at the foot of the Lord. Washed
@@ -148,7 +213,7 @@ Philippines I sit with tea outside
 for the sunset. In both I leave
 empty for repetition - my life
 in death on the caricature of
-a mall.</tw-passagedata><tw-passagedata pid="11" name="denounce evil, repeat evil" tags="" position="762,774" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="12" name="transfiguration" tags="" position="818,460" size="100,100">Our university center reports
+a mall.</tw-passagedata><tw-passagedata pid="11" name="denounce evil, repeat evil" tags="" position="775.3333333333334,639" size="100,100">The only questions we ask are &quot;When did you know you didn&#39;t believe in God?&quot;. I have never heard them answer &quot;when did you know there was one?&quot;</tw-passagedata><tw-passagedata pid="12" name="transfiguration" tags="" position="818,460" size="100,100">Our university center reports
 that only 13% of the undergraduate body
 are godless.
 
@@ -160,8 +225,8 @@ of men and women for religion becomes
 a lower factor.
 
 They still sing. There&#39;s christians, a few
-dozen, concentrated somewhere - linked
-in [[the parts]] silence, parts disbelief.</tw-passagedata><tw-passagedata pid="13" name="Untitled Passage 1" tags="" position="1073,143" size="100,100">My personal belief is that religion
+dozen, concentrated somewhere—linked
+in [[the parts]] silence, parts disbelief.</tw-passagedata><tw-passagedata pid="13" name="Untitled Passage 1" tags="" position="921.3333333333333,193" size="100,100">&quot;My personal belief is that religion
 is for people with weak souls.
 
 Where I see men with conviction
@@ -179,11 +244,7 @@ are left in the cliffs and scarred
 for nothing as if souls are a replaceable
 thing I want to say that a lifetime
 has been granted to take and fulfill
-[[deeper than one can ever know.]]</tw-passagedata><tw-passagedata pid="14" name="deeper than one can ever know." tags="" position="801,60" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Untitled Passage 2" tags="" position="938,504" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="Untitled Passage 3" tags="" position="192,257" size="100,100">
-(print: &quot;&lt;script&gt;$(&#39;html&#39;).removeClass(\)&lt;/script&gt;&quot;)
-(if: (passage:)&#39;s tags&#39;s length &gt; 0)[
-(print: &quot;&lt;script&gt;$(&#39;html&#39;).addClass(&#39;&quot; + (passage:)&#39;s tags.join(&#39; &#39;) + &quot;&#39;\)&lt;/script&gt;&quot;)
-</tw-passagedata><tw-passagedata pid="17" name="kiss the feet" tags="" position="835,340" size="100,100">Unlearning the book of
+[[deeper than one can ever know.]]&quot;</tw-passagedata><tw-passagedata pid="14" name="deeper than one can ever know." tags="" position="801,60" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="15" name="Untitled Passage 2" tags="" position="938,504" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="kiss the feet" tags="" position="755,345" size="100,100">Unlearning the book of
 revelations:
 
 strumming the muscle fibers
@@ -211,7 +272,21 @@ and the letters I have left or
 the sound of a number, of a name
 declared too far again. 
 
-I&#39;m eating bones in my room.</tw-passagedata><tw-passagedata pid="18" name="the parts" tags="" position="968,396.66666666666663" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+I&#39;m eating bones in my room.</tw-passagedata><tw-passagedata pid="17" name="the parts" tags="" position="968,396" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="18" name="overpower women" tags="" position="653.3333333333334,746.6666666666667" size="100,100">Where were you when
+they buried the world?
+
+I was with her, silently watching,
+I was with her when in the beginning
+she said let there be light.
+
+Let there be all the things
+that [[they will never hear-&gt;transfiguration]].
+
+My citizenry never prepared me for this.
+
+Before we lived in a town that talked
+about God and rid all against us;
+we were so close to salvation.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
