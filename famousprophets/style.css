@@ -25,6 +25,10 @@
     background:0;
 }
 
+.goback{
+    color:#000 !important;
+}
+
 
 ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
