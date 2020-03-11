@@ -22,11 +22,16 @@
     margin:auto;
     position: fixed;
     top:50%;
+    margin-top:-25%;
     background:0;
 }
 
 .goback{
     color:#000 !important;
+}
+
+a{
+    color: #000;
 }
 
 
