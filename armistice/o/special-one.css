@@ -1,0 +1,34 @@
+
+
+@font-face {
+    font-family: 'Apple Garamond';
+    src: url('AppleGaramond-Bold.woff2') format('woff2'),
+        url('AppleGaramond-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apple Garamond';
+    src: url('AppleGaramond-BoldItalic.woff2') format('woff2'),
+        url('AppleGaramond-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Apple Garamond';
+    src: url('AppleGaramond.woff2') format('woff2'),
+        url('AppleGaramond.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apple Garamond';
+    src: url('AppleGaramond-Italic.woff2') format('woff2'),
+        url('AppleGaramond-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
