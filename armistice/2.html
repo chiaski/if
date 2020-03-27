@@ -11,10 +11,22 @@
   <link rel="stylesheet" href="style.css" type="text/css">
   <style type="text/css">
       
+      body{
+          cursor: all-scroll;
+      }
+      
       .spark{
           
+          position: absolute;
+          top:0%;
+          left:20%;
   transform-origin: 0 0;
   transform: rotate(90deg);
+      }
+      
+      a{
+          text-decoration: underline;
+          cursor:help;
       }
    
   </style>
@@ -28,13 +40,17 @@
           
              <pre>
              
-             i illuminate every body
-             i have been with!
+             when i was together at the end of the world
+             all these rooms were strangely weary
+             
+             <blockquote>i thought what must it be then to be here for the <a onclick="rotate()">coming</a></blockquote>
              
              <div class="spark">
              
              since the beginning of these incidents<br>
-             i've been thinking about the precision of time
+             i've been thinking about the precision of time<br>
+             incised in our marrows  <br>
+             
              
              </div>
              
@@ -51,6 +67,10 @@
       <script type="text/javascript" src="skrollr.min.js"></script>
 	<script type="text/javascript">
 	var s = skrollr.init();
+        
+        function rotate(){
+        document.querySelector('.poem').style.transform = 'rotate(270deg)'; 
+        }
 	</script>
 </body>
     
