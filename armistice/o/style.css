@@ -3,27 +3,21 @@
     position: absolute;
     width:100%;
     height: auto;
-    background: yellow;
     top:0;left:0;
-    overflow-y: scroll;
 }
 
 
 #container{
+    position: relative;
     width:100%;
-    height: auto;
     top: 0; left: 0;
     display: flex;
     justify-content: center;
     box-sizing: content-box;
-    background: red;
 }
 
 .poem{
     margin:auto;
-    position: fixed;
-    top:50%;
-    margin-top:-25%;
     background:0;
 }
 
