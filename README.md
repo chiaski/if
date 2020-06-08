@@ -10,7 +10,7 @@ chia amisola's interactive fiction
 
 * [gay girl prays for a gun: girls trauma & god](https://chiaski.github.io/if/gay%20girl%20prays%20for%20a%20gun/gay%20girl%20prays%20for%20a%20gun.html) _in progress_
 
-* armistic: a html poetry series _in progress_
+* [armistice](/armistice): a html poetry series _in progress_
 
 ## flickgames
 * [they walk on tracks of neverending light, 2017](https://www.flickgame.org/flickuplay.html?p=5eba77c9bca8e93bcbb2f2aa6040a145)
