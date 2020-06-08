@@ -10,7 +10,7 @@ chia amisola's interactive fiction
 
 * [gay girl prays for a gun: girls trauma & god](https://chiaski.github.io/if/gay%20girl%20prays%20for%20a%20gun/gay%20girl%20prays%20for%20a%20gun.html) _in progress_
 
-* [armistice](/armistice): a html poetry series _in progress_
+* [armistice](armistice/index.html): a html poetry series _in progress_
 
 ## flickgames
 
