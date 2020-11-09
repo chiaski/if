@@ -26,12 +26,17 @@ NAME purpl
 PAL 1
 233,234,255
 178,170,214
-178,170,214
+142,145,214
 
 PAL 2
 230,183,255
 167,150,204
 144,143,205
+
+PAL 3
+141,148,163
+204,174,194
+232,198,220
 
 ROOM 0
 d,d,0,0,0,0,0,0,c,0,0,0,0,0,d,0
@@ -108,8 +113,27 @@ e,0,0,0,0,0,g,g,g,g,g,0,0,0,0,0
 0,0,0,e,0,0,c,0,c,c,c,0,0,0,0,0
 0,z,0,0,0,0,0,0,c,0,0,0,11,0,d,0
 0,0,0,0,0,0,0,0,c,0,0,c,0,0,0,0
-END 8 8,0
 PAL 0
+
+ROOM 4
+0,0,0,0,11,0,0,0,d,d,11,0,0,0,0,0
+0,0,0,d,0,11,0,13,0,0,d,0,0,0,0,11
+0,e,0,0,x,0,c,0,0,0,0,e,0,0,0,0
+0,0,0,0,0,0,c,c,c,c,c,0,0,0,0,0
+0,b,0,0,0,c,0,c,0,c,c,0,0,0,e,0
+0,0,0,b,0,c,c,c,0,c,c,0,0,0,0,0
+0,0,a,0,0,0,0,0,c,c,c,a,0,11,0,0
+0,0,0,0,0,c,0,0,0,c,c,0,x,0,0,0
+0,0,11,0,0,0,0,0,0,0,0,0,0,b,0,0
+x,0,0,0,0,b,a,0,0,c,0,0,0,0,0,a
+0,0,0,0,x,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,c,0,c,c,0,a,0,0,11,0
+0,0,0,0,0,0,0,c,0,0,0,0,0,0,0,0
+0,11,0,0,0,0,0,c,0,b,x,0,0,0,0,0
+0,0,0,0,a,0,0,c,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,x,0,0
+END 0 7,1
+PAL 3
 
 TIL 10
 10000110
@@ -132,6 +156,28 @@ TIL 11
 00001000
 00001000
 WAL true
+
+TIL 12
+00110000
+01000010
+10000001
+00000100
+00000001
+10000001
+01000100
+01000000
+WAL true
+
+TIL 13
+00011000
+00001110
+00000111
+00000111
+00000111
+00000111
+00001110
+00011000
+WAL false
 
 TIL a
 00000000
@@ -499,7 +545,7 @@ SPR A
 01000010
 00100100
 00011000
-POS 0 5,12
+POS 0 4,12
 
 SPR a
 00000000
@@ -555,14 +601,24 @@ POS 1 11,7
 
 SPR e
 00000000
+00000010
+00010000
+00000001
+01000000
+00001000
+00011100
+00001000
+>
 00000000
-00000000
-00000000
-00000000
-00000000
-00000000
-00000000
-POS 3 12,3
+00100000
+00000100
+00000001
+01000000
+00001000
+00011100
+00001000
+DLG b
+POS 1 15,7
 
 SPR f
 00000000
@@ -609,6 +665,48 @@ NAME aaa
 DLG 5
 POS 2 8,10
 
+SPR j
+00011000
+00011000
+11111111
+00111100
+00111100
+00100100
+00100100
+00100100
+>
+00000000
+00011000
+00011000
+11111111
+00111100
+00111100
+00100100
+00100100
+DLG 9
+POS 4 8,4
+
+SPR k
+01000000
+00011000
+00111100
+01111110
+01111110
+00111100
+00011001
+00000000
+>
+00000000
+10011000
+00111100
+01111110
+01111110
+00111100
+00011000
+00000001
+DLG a
+POS 3 8,0
+
 ITM 0
 00000000
 00000000
@@ -651,7 +749,7 @@ DLG 1
 """
 and you took me there
 all too gently
-{exit "1" 4 15 "slide_u"}
+{exit "1" 4 15 "wave"}
 """
 NAME move1
 
@@ -675,7 +773,7 @@ DLG 5
 here i must come clean
 {pg}
 {clr1}where i wish for you and i to feel all this again{clr1} {printSprite "A"}where {wvy}i pray{wvy} the world ends without us i hear death whistling in the wind
-{exit "3" 9 15}
+{exit "3" 9 15 "wave"}
 """
 NAME aaa dialog
 
@@ -690,13 +788,36 @@ DLG 7
 {clr2}perhaps we made a decent sacrifice. when i hold your hands and come clean the world envelops us tightly. i feel the air cease. {clr2}
 NAME heart
 
-DLG 8
+DLG 9
 """
-and as you fall i catch you glow pink, smaller, sudden
-♡
-your soul is moving
+{clr3}"above us only the threat of time waits."{clr3}
+{pg}
+{shk}––it's not too late then.{shk}
+this is where we are inside.
+{pg}
+{clr3}"don't come too close to the act of magic. exposure."{clr3}
+{pg}
+{shk}..we have never owed the universe anything..{shk}
 """
-NAME ending 1
+NAME you
+
+DLG a
+"""
+ and you took me there
+all too gently
+{exit "4" 7 15 "slide_u"}
+"""
+NAME move3
+
+DLG b
+"""
+{clr3}our mountains bend and shutter; every word rifts between us{clr3}
+{exit "2" 0 12 "wave"}
+"""
+NAME move4
+
+DLG c
+
 
 VAR a
 42
